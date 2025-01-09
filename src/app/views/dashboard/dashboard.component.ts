@@ -2,6 +2,9 @@ import { DOCUMENT, NgStyle } from '@angular/common';
 import { Component, DestroyRef, effect, inject, OnInit, Renderer2, signal, WritableSignal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ChartOptions } from 'chart.js';
+import { Router } from '@angular/router';
+import { AuthService } from '../../auth.service'; // Ruta del servicio
+
 import {
   AvatarComponent,
   ButtonDirective,
@@ -46,6 +49,7 @@ interface IUser {
     imports: [WidgetsDropdownComponent, TextColorDirective, CardComponent, CardBodyComponent, RowComponent, ColComponent, ButtonDirective, IconDirective, ReactiveFormsModule, ButtonGroupComponent, FormCheckLabelDirective, ChartjsComponent, NgStyle, CardFooterComponent, GutterDirective, ProgressBarDirective, ProgressComponent, WidgetsBrandComponent, CardHeaderComponent, TableDirective, AvatarComponent]
 })
 export class DashboardComponent implements OnInit {
+
 
   readonly #destroyRef: DestroyRef = inject(DestroyRef);
   readonly #document: Document = inject(DOCUMENT);
@@ -145,7 +149,12 @@ export class DashboardComponent implements OnInit {
     trafficRadio: new FormControl('Month')
   });
 
+ 
+
+  
   ngOnInit(): void {
+    
+
     this.initCharts();
     this.updateChartOnColorModeChange();
   }
@@ -186,4 +195,9 @@ export class DashboardComponent implements OnInit {
       });
     }
   }
+
+
+ 
+
+  
 }

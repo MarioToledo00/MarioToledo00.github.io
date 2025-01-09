@@ -2,10 +2,10 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
-    path: 'user',
-    loadComponent: () => import('./user/user.component').then(m => m.UserComponent),
+    path: '',
+    loadComponent: () => import('./users/users.component').then(m => m.UsersComponent),
     data: {
-      title: 'Usuarios'
+      title: 'Users'
     }
   }
 ];

@@ -17,4 +17,17 @@ import {  TableDirective, TableColorDirective, TableActiveDirective, BorderDirec
 })
 export class UserComponent {
 
+  data = [
+    { id: 1, name: 'Juan Pérez', email: 'juan@example.com', details: 'Detalles adicionales sobre Juan' },
+    { id: 2, name: 'María López', email: 'maria@example.com', details: 'Detalles adicionales sobre María' },
+    { id: 3, name: 'Carlos Ruiz', email: 'carlos@example.com', details: 'Detalles adicionales sobre Carlos' }
+  ];
+
+  expandedRow: number | null = null;
+
+  toggleExpandRow(index: number): void {
+    alert(index)
+    this.expandedRow = this.expandedRow === index ? null : index;
+  }
+
 }

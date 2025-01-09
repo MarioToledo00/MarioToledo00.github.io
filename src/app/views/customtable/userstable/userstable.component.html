@@ -1,0 +1,22 @@
+<table striped="true" cTable>
+    <thead>
+    <tr>
+        
+        <th scope="col">Nombre</th>
+        <th scope="col">Email</th>
+        <th scope="col">Rol</th>
+        <th scope="col">Admin</th>
+        
+    </tr>
+    </thead>
+    <tbody>
+        @for (record of data; track record.id) {
+            <tr>
+                <td>{{record.name}}</td>
+                <td>{{record.email}}</td>
+                <td>{{record.rol}}</td>
+                <td>{{record.isRoot}}</td>
+            </tr>
+        }   
+    </tbody>
+  </table>

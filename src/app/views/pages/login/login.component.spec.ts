@@ -12,6 +12,7 @@ describe('LoginComponent', () => {
   let iconSetService: IconSetService;
 
   beforeEach(async () => {
+    
     await TestBed.configureTestingModule({
     imports: [FormModule, CardModule, GridModule, ButtonModule, IconModule, LoginComponent],
     providers: [IconSetService]
@@ -20,6 +21,7 @@ describe('LoginComponent', () => {
   });
 
   beforeEach(() => {
+    alert('This test is skipped because the component uses external template and styles');
     iconSetService = TestBed.inject(IconSetService);
     iconSetService.icons = { ...iconSubset };
 

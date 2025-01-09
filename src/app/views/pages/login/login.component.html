@@ -5,14 +5,14 @@
         <c-card-group>
           <c-card class="p-4">
             <c-card-body>
-              <form cForm>
-                <h1>Login</h1>
-                <p class="text-body-secondary">Sign In to your account</p>
+              <form cForm [formGroup]="aplyForm" (submit)="onSubmitLogin()">
+                <h1>IMS</h1>
+                <p class="text-body-secondary">Ingresa a tu cuenta</p>
                 <c-input-group class="mb-3">
                   <span cInputGroupText>
                     <svg cIcon name="cilUser"></svg>
                   </span>
-                  <input autoComplete="username" cFormControl placeholder="Username" />
+                  <input autoComplete="email" cFormControl formControlName="email" placeholder="Correo" />
                 </c-input-group>
                 <c-input-group class="mb-4">
                   <span cInputGroupText>
@@ -23,17 +23,18 @@
                     cFormControl
                     placeholder="Password"
                     type="password"
+                    formControlName="password"
                   />
                 </c-input-group>
                 <c-row>
                   <c-col xs="6">
-                    <button cButton class="px-4" color="primary">
-                      Login
+                    <button cButton class="px-4" color="primary" type="submit">
+                      Iniciar sesión
                     </button>
                   </c-col>
-                  <c-col class="text-right" xs="6">
+                  <c-col class="text-right margin-t-10" xs="8">
                     <button cButton class="px-0" color="link">
-                      Forgot password?
+                      ¿Olvidaste tu contraseña?
                     </button>
                   </c-col>
                 </c-row>
@@ -43,13 +44,12 @@
           <c-card [ngStyle]="{'minWidth.%': 44}" class="text-white bg-primary py-5">
             <c-card-body class="text-center">
               <div>
-                <h2>Sign up</h2>
+                <h2>Regístrate</h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua.
+                  Si aún no tienes una cuenta, te invitamos a crear una nueva registrándote ahora mismo. Haz clic en el enlace proporcionado y sigue los sencillos pasos para completar el proceso de registro. ¡No esperes más para disfrutar de todos los beneficios y funcionalidades que te están esperando!
                 </p>
                 <button [active]="true" cButton class="mt-3" color="primary" routerLink="/register">
-                  Register Now!
+                  Registrarse ahora!
                 </button>
               </div>
             </c-card-body>

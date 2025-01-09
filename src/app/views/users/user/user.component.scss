@@ -1,0 +1,13 @@
+tr {
+    cursor: pointer;
+  
+    &.expanded {
+      background-color: #f8f9fa;
+      height: 10px;
+    }
+  }
+  
+  td[colspan] {
+    background-color: #e9ecef;
+    height: 100px;
+  }

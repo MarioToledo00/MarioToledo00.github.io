@@ -16,38 +16,35 @@
 </div>
 
 <div>
-    <table [striped]="true" cTable>
+      <table  class="table table-hover">
         <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Nombre</th>
-          <th scope="col">Apellido</th>
-          <th scope="col">Heading</th>
-          <th scope="col" style="text-align: center;">Action</th>
-        </tr>
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Acción</th>
+          </tr>
         </thead>
         <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mario</td>
-          <td>Toledo</td>
-          <td>&#64;mdo</td>
-          <td style="text-align: center;"><button cButton color="primary" shape="rounded-pill">Editar</button></td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Mario</td>
-          <td>Toledo</td>
-          <td>&#64;fat</td>
-          <td style="text-align: center;"><button cButton color="primary" shape="rounded-pill">Editar</button></td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Mario</td>
-          <td>Toledo</td>
-          <td>&#64;twitter</td>
-          <td style="text-align: center;"><button cButton color="primary" shape="rounded-pill">Editar</button></td>
-        </tr>
+          @for(row of data; track row.id) {
+            <tr [class.expanded]="expandedRow === row.id"
+            (click)="toggleExpandRow(row.id)">
+              <td>{{ row.id }}</td>
+              <td>{{ row.name }}</td>
+              <td>{{ row.email }}</td>
+              <td>
+                <button class="btn btn-primary btn-sm">Editar</button>
+              </td>
+            </tr>
+            <tr *ngIf="expandedRow === row.id">
+              <td colspan="4">
+                <strong>Detalles adicionales:</strong>
+                <p>{{ row.details }}</p>
+              </td>
+            </tr>
+          }
+
         </tbody>
       </table>
+      
 </div>
